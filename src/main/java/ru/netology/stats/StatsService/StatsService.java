@@ -1,9 +1,7 @@
 package ru.netology.stats.StatsService;
 
-import java.util.Arrays;
-
 public class StatsService {
-    public int total(int[] array) {
+    public int totalSum(int[] array) {
         int sum = 0;
 //        for (int i = 0; i < array.length; i++) {
 //            sum += array[i];
@@ -15,11 +13,12 @@ public class StatsService {
     }
 
     public int averageSum(int[] array) {
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-        int average = sum / array.length;
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            sum += array[i];
+//        }
+        int totalSum = totalSum(array);
+        int average = totalSum / array.length;
         return average;
     }
 
@@ -44,15 +43,16 @@ public class StatsService {
     }
 
     public int getLessAverage(int[] array) {
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-        int average = sum / array.length;
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            sum += array[i];
+//        }
+//        int average = sum / array.length;
 
+        int averageSum = averageSum(array);
         int lessAverage = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] <= average) {
+            if (array[i] <= averageSum) {
                 lessAverage++;
             }
         }
@@ -60,15 +60,15 @@ public class StatsService {
     }
 
     public int getMoreAverage(int[] array) {
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-        int average = sum / array.length;
-
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            sum += array[i];
+//        }
+//        int average = sum / array.length;
+        int averageSum = averageSum(array);
         int moreAverage = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] >= average) {
+            if (array[i] >= averageSum) {
                 moreAverage++;
             }
         }

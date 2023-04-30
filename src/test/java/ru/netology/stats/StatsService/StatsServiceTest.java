@@ -10,10 +10,10 @@ public class StatsServiceTest {
     public void shouldFindTotalSum() {
         StatsService service = new StatsService();
         int[] array = {
-                100, 100, 70, 15, 10, 5
+                1, 0, 2
         };
-        int expected = 300;
-        int actual = service.total(array);
+        int expected = 3;
+        int actual = service.totalSum(array);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -21,9 +21,9 @@ public class StatsServiceTest {
     public void shouldFindAverageSum() {
         StatsService service = new StatsService();
         int[] array = {
-                7, 3, 10, 15, 70, 70
+                100, 200
         };
-        int expected = 29;
+        int expected = 150;
         int actual = service.averageSum(array);
         Assertions.assertEquals(expected, actual);
     }
@@ -54,9 +54,9 @@ public class StatsServiceTest {
     public void shouldFindTotalLessAverage() {
         StatsService service = new StatsService();
         int[] array = {
-                5, 5, 2, 4, 4
+                2, 2, 4, 4
         };
-        int expected = 3;
+        int expected = 2;
         int actual = service.getLessAverage(array);
         Assertions.assertEquals(expected, actual);
     }
@@ -65,9 +65,9 @@ public class StatsServiceTest {
     public void shouldFindTotalMoreAverage() {
         StatsService service = new StatsService();
         int[] array = {
-                2, 8, 5
+                2, 2, 6, 6, 5, 7
         };
-        int expected = 2;
+        int expected = 4;
         int actual = service.getMoreAverage(array);
         Assertions.assertEquals(expected, actual);
     }
